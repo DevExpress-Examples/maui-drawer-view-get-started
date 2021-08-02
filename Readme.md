@@ -1,13 +1,12 @@
 # DevExpress Drawer View for .NET MAUI
 
-This example allows you to get started with the DrawerView component - use it to add a [navigation drawer﻿](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
+This example allows you to get started with the DrawerView component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
 
 1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 22 Preview.
-2. Download a free copy of DevExpress Xamarin.Forms and MAUI Controls from https://www.devexpress.com/xamarin-free.
-3. [Obtain your NuGet feed URL](http://docs.devexpress.com/GeneralInformation/116042/installation/install-devexpress-controls-using-nuget-packages/obtain-your-nuget-feed-url).
-4. Register the DevExpress NuGet feed as a package source.
-5. Restore all NuGet packages for the solution.  
-6. Run the application on an Android device or emulator.  
+2. Register the following NuGet feed in Visual Studio: https://nuget.devexpress.com/free/api.  
+	If you are an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/), this MAUI preview will be available in your personal NuGet feed automatically.
+4. Restore NuGet packages.  
+5. Run the application on an Android device or emulator.  
 
 <img src="./img/devexpress-maui-drawer-view.png"/>
 
@@ -19,10 +18,8 @@ Create a new .NET MAUI solution in Visual Studio 22 Preview.
 Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
 
 Add the DevExpress Drawer View component to your solution as follows: 
-1. Download a free copy of DevExpress Xamarin.Forms and MAUI Controls from https://www.devexpress.com/xamarin-free.
-2. [Obtain your NuGet feed URL](http://docs.devexpress.com/GeneralInformation/116042/installation/install-devexpress-controls-using-nuget-packages/obtain-your-nuget-feed-url).
-3. Register the DevExpress NuGet feed as a package source. 
-4. Install the **DevExpress.Maui.Navigation** package from the DevExpress NuGet feed.
+1. Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
+2. Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
 In the *Startup.cs* file, register a handler for the DevExpress DrawerView :
 
@@ -216,7 +213,7 @@ Define drawer behavior depending on device or emulator orientation:
 - Landscape orientation – the drawer is always visible.
 - Portrait orientation – the drawer moves out over the main content area when a user swipes a screen from the left edge.
 
-Add the **IsLandscapeOriented** dependency property to the MainPage class:
+Add the **IsLandscapeOriented** dependency property to the **MainPage** class:
 
 ```cs
 using System;
