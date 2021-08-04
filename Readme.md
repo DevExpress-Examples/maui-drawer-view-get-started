@@ -1,6 +1,17 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Startup.cs](./CS/DrawerViewExample/Startup.cs)
+* [MainPage.xaml](./CS/DrawerViewExample/MainPage.xaml)
+* [MainPage.xaml.cs](./CS/DrawerViewExample/MainPage.xaml.cs)
+* [CarModel.cs](./CS/DrawerViewExample/CarModel.cs)
+* [CarBrandViewModel.cs](./CS/DrawerViewExample/CarBrandViewModel.cs)
+* [MainViewModel.cs](./CS/DrawerViewExample/MainViewModel.cs)
+<!-- default file list end -->
+
 # DevExpress Drawer View for .NET MAUI
 
-This example allows you to get started with the DrawerView component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
+This example allows you to get started with the [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
 
 1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 22 Preview.
 2. Register the following NuGet feed in Visual Studio: https://nuget.devexpress.com/free/api.  
@@ -17,11 +28,11 @@ The following step-by-step instructions describe how to create the same applicat
 Create a new .NET MAUI solution in Visual Studio 22 Preview.  
 Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
 
-Add the DevExpress Drawer View component to your solution as follows: 
-1. Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
-2. Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
+Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
 
-In the *Startup.cs* file, register a handler for the DevExpress DrawerView :
+Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
+
+In the *Startup.cs* file, register a handler for the DevExpress DrawerView:
 
 ```cs
 using Microsoft.Maui;
@@ -44,7 +55,7 @@ namespace DrawerViewExample {
 }
 ```
 
-In the *MainPage.xaml* file, use the *dxn* prefix to declare the **DevExpress.Maui.Navigation** namespace and add a **DrawerView** object to the main page:
+In the *MainPage.xaml* file, use the *dxn* prefix to declare the **DevExpress.Maui.Navigation** namespace and add a [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) object to the main page:
 
 ```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -170,8 +181,8 @@ namespace DrawerViewExample {
 ## Specify the Drawer View Content
 In the *MainPage.xaml* file:
 1. Set the **ContentPage.BindingContext** property to a **MainViewModel** object.
-2. Set the **DrawerView.DrawerContent** property to a **ListView** object. Bind the list’s **ItemsSource** property to the **CarModelsByBrand** property of the view model, and set up list items to display brand names.
-3. Set the **DrawerView.MainContent** property to a **ListView** object. Specify the list’s **ItemsSource** binding. The bound list should contain car models corresponding to the selected brand.
+2. Set the [DrawerView.DrawerContent](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView.DrawerContent) property to a **ListView** object. Bind the list’s **ItemsSource** property to the **CarModelsByBrand** property of the view model, and set up list items to display brand names.
+3. Set the [DrawerView.MainContent](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView.MainContent) property to a **ListView** object. Specify the list’s **ItemsSource** binding. The bound list should contain car models corresponding to the selected brand.
 
 ```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -264,7 +275,7 @@ class BoolToDrawerBehaviorConverter : IValueConverter {
 }
 ```
 
-Bind the **DrawerView.DrawerBehavior** property to **IsLandscapeOriented**:
+Bind the [DrawerView.DrawerBehavior](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView.DrawerBehavior) property to **IsLandscapeOriented**:
 
 ```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
