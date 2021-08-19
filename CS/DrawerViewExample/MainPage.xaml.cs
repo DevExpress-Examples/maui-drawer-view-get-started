@@ -25,6 +25,11 @@ namespace DrawerViewExample {
         protected void OnSizeChanged(object sender, EventArgs args) {
             IsLandscapeOriented = this.Width > this.Height;
         }
+
+        protected override void OnAppearing() {
+            base.OnAppearing();
+            carBrandList.SelectedItem = ((MainViewModel)BindingContext).CarModelsByBrand[0];
+        }
     }
 
     class BoolToDrawerBehaviorConverter : IValueConverter {
