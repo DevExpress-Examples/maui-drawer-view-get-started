@@ -6,7 +6,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Startup.cs](./CS/DrawerViewExample/Startup.cs)
+* [MauiProgram.cs](./CS/DrawerViewExample/MauiProgram.cs)
 * [MainPage.xaml](./CS/DrawerViewExample/MainPage.xaml)
 * [MainPage.xaml.cs](./CS/DrawerViewExample/MainPage.xaml.cs)
 * [CarModel.cs](./CS/DrawerViewExample/CarModel.cs)
@@ -37,7 +37,7 @@ Register https://nuget.devexpress.com/free/api as a package source in Visual Stu
 
 Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
-In the *Startup.cs* file, register a handler for the DevExpress DrawerView:
+In the *MauiProgram.cs* file, register a handler for the DevExpress DrawerView:
 
 ```cs
 using Microsoft.Maui;
@@ -46,17 +46,19 @@ using Microsoft.Maui.Controls.Hosting;
 using DevExpress.Maui.Navigation;
 
 namespace DrawerViewExample {
-	public class Startup : IStartup {
-		public void Configure(IAppHostBuilder appBuilder) {
-			appBuilder
-				.ConfigureMauiHandlers((_, handlers) => 
-                                        handlers.AddHandler<DrawerView, DrawerViewHandler>())
-				.UseMauiApp<App>()
-				.ConfigureFonts(fonts => {
-					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				});
-		}
-	}
+    public static class MauiProgram {
+        public static MauiApp CreateMauiApp() {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureMauiHandlers((handlers => handlers.AddHandler<DrawerView, DrawerViewHandler>()))
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
+            return builder.Build();
+        }
+    }
 }
 ```
 
