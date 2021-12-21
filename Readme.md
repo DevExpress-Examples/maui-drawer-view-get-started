@@ -3,9 +3,49 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1018580)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+# DevExpress Drawer View for .NET MAUI
 
+[DevExpress Mobile UI](https://www.devexpress.com/maui/) allows you to use a .NET cross-platform UI toolkit and C# to build native apps for iOS and Android.
+
+![DevExpress Mobile UI for .NET MAUI](./img/maui.png)
+
+The **DevExpress Mobile UI for Xamarin.Forms and .NET MAUI** is free of charge. To learn more about our offer and to reserve your copy, visit [Free DevExpress Mobile UI for Xamarin.Forms and .NET MAUI](https://www.devexpress.com/xamarin-free).
+
+## Requirements
+
+Please register the DevExpress NuGet Gallery in Visual Studio to restore the NuGet packages used in this solution. See the following topic for more information: [Get Started with DevExpress Mobile UI for .NET MAUI](https://docs.devexpress.com/MAUI/403249/get-started).
+
+## Documentation
+
+- [Data Grid](https://docs.devexpress.com/MAUI/403255/data-grid/data-grid)
+- [Charts](https://docs.devexpress.com/MAUI/403300/charts/charts)
+- [Data Form](https://docs.devexpress.com/MAUI/403640/data-form)
+- [Navigation](https://docs.devexpress.com/MAUI/403297/navigation/index)
+- [Data Editors](https://docs.devexpress.com/MAUI/403427/editors/index)
+- [Collection View](https://docs.devexpress.com/MAUI/403324/collection-view/index)
+
+## More Examples
+
+* [Stocks App](https://github.com/DevExpress-Examples/maui-stocks-mini)
+* [Data Grid](https://github.com/DevExpress-Examples/maui-data-grid-get-started)
+* [Data Form](https://github.com/DevExpress-Examples/maui-data-form-get-started)
+* [Data Editors](https://github.com/DevExpress-Examples/maui-editors-get-started)
+* [Pie Chart](https://github.com/DevExpress-Examples/maui-pie-chart-get-started)
+* [Scatter Chart](https://github.com/DevExpress-Examples/maui-scatter-chart-get-started)
+* [Tab Page](https://github.com/DevExpress-Examples/maui-tab-page-get-started)
+* [Tab View](https://github.com/DevExpress-Examples/maui-tab-view-get-started)
+* [Drawer Page](https://github.com/DevExpress-Examples/maui-drawer-page-get-started)
+* [Collection View](https://github.com/DevExpress-Examples/maui-collection-view-get-started)
+
+## What's in This Repository
+
+This example allows you to get started with the [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
+
+![DevExpress Drawer View for .NET MAUI](./img/devexpress-maui-drawer-view.png)
+
+### Files to Look At
+
+<!-- default file list -->
 * [MauiProgram.cs](./CS/DrawerViewExample/MauiProgram.cs)
 * [MainPage.xaml](./CS/DrawerViewExample/MainPage.xaml)
 * [MainPage.xaml.cs](./CS/DrawerViewExample/MainPage.xaml.cs)
@@ -14,9 +54,7 @@
 * [MainViewModel.cs](./CS/DrawerViewExample/MainViewModel.cs)
 <!-- default file list end -->
 
-# DevExpress Drawer View for .NET MAUI
-
-This example allows you to get started with the [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
+## How to Run This Application
 
 1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 22 Preview.
 2. Register the following NuGet feed in Visual Studio: https://nuget.devexpress.com/free/api.  
@@ -24,11 +62,11 @@ This example allows you to get started with the [DrawerView](http://docs.devexpr
 4. Restore NuGet packages.  
 5. Run the application on an Android device or emulator.  
 
-<img src="./img/devexpress-maui-drawer-view.png"/>
+## How to Reproduce This Application
 
-The following step-by-step instructions describe how to create the same application.
+The following step-by-step tutorial details how to reproduce this application.
 
-## Create a New MAUI Application and Add a Drawer View
+### Create a New MAUI Application and Add a Drawer View
 
 Create a new .NET MAUI solution in Visual Studio 22 Preview.  
 Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
@@ -73,7 +111,7 @@ In the *MainPage.xaml* file, use the *dxn* prefix to declare the **DevExpress.Ma
 </ContentPage>
 ```
 
-## Create Models and View Models
+### Create Models and View Models
 Add a **CarModel** class that specifies a data object in the application:
 
 ```cs
@@ -185,7 +223,7 @@ namespace DrawerViewExample {
 }
 ```
 
-## Specify the Drawer View Content
+### Specify the Drawer View Content
 In the *MainPage.xaml* file:
 1. Set the **ContentPage.BindingContext** property to a **MainViewModel** object.
 2. Set the [DrawerView.DrawerContent](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView.DrawerContent) property to a grid with a **ListView** object. Bind the list’s **ItemsSource** property to the **CarModelsByBrand** property of the view model, and set up list items to display brand names.
@@ -233,7 +271,7 @@ In the *MainPage.xaml* file:
 </ContentPage>
 ```
 
-## Define the Drawer Behavior
+### Define the Drawer Behavior
 
 Define drawer behavior depending on device or emulator orientation:  
 - Landscape orientation – the drawer is always visible.
@@ -310,7 +348,7 @@ Bind the [DrawerView.DrawerBehavior](http://docs.devexpress.com/MAUI/DevExpress.
 </ContentPage>
 ```
 
-## Customize the Drawer Appearance
+### Customize the Drawer Appearance
 Use the following properties to customize the drawer size, shadow, and scrim:
 
 ```xaml
