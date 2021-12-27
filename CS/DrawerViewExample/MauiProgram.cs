@@ -2,6 +2,7 @@
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
 using DevExpress.Maui.Navigation;
+using DevExpress.Maui;
 
 namespace DrawerViewExample {
     public static class MauiProgram {
@@ -9,7 +10,7 @@ namespace DrawerViewExample {
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .ConfigureMauiHandlers((handlers => handlers.AddHandler<DrawerView, DrawerViewHandler>()))
+                .UseDevExpress()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
