@@ -39,7 +39,7 @@ Please register the DevExpress NuGet Gallery in Visual Studio to restore the NuG
 
 ## What's in This Repository
 
-This example allows you to get started with the [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) component - use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
+This example allows you to get started with the [DrawerView](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.DrawerView) component — use it to add a [navigation drawer](https://material.io/design/components/navigation-drawer.html) to your .NET MAUI application.
 
 ![DevExpress Drawer View for .NET MAUI](./img/devexpress-maui-drawer-view.png)
 
@@ -57,10 +57,10 @@ This example allows you to get started with the [DrawerView](http://docs.devexpr
 ## How to Run This Application
 
 1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 22 Preview.
-2. Register the following NuGet feed in Visual Studio: https://nuget.devexpress.com/free/api.  
+2. Register the following NuGet feed in Visual Studio: `https://nuget.devexpress.com/free/api`.  
 	If you are an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/), this MAUI preview will be available in your personal NuGet feed automatically.
 4. Restore NuGet packages.  
-5. Run the application on an Android device or emulator.  
+5. Run the application on an Android or iOS device or emulator.  
 
 ## How to Reproduce This Application
 
@@ -68,14 +68,13 @@ The following step-by-step tutorial details how to reproduce this application.
 
 ### Create a New MAUI Application and Add a Drawer View
 
-Create a new .NET MAUI solution in Visual Studio 22 Preview.  
-Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
+Create a new .NET MAUI solution in Visual Studio 22 Preview. Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
 
-Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
+Register `https://nuget.devexpress.com/free/api` as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
 
 Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
-In the *MauiProgram.cs* file, register a handler for the DevExpress DrawerView:
+In the *MauiProgram.cs* file, call the **UseDevExpress** method to register handlers for all DevExpress components:
 
 ```cs
 using Microsoft.Maui;
