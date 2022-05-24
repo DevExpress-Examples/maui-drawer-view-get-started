@@ -1,50 +1,40 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DrawerViewExample.MainPage"
              xmlns:local="clr-namespace:DrawerViewExample"
-             xmlns:dxn="clr-namespace:DevExpress.Maui.Navigation;assembly=DevExpress.Maui.Navigation"
-             x:Name="page">
-    <ContentPage.Resources>
-        <local:BoolToDrawerBehaviorConverter x:Key="boolToDrawerBehaviorConverter"/>
-    </ContentPage.Resources>
-    <ContentPage.BindingContext>
-        <local:MainViewModel/>
-    </ContentPage.BindingContext>
-    <dxn:DrawerView x:Name="drawer"
-                    DrawerBehavior="{Binding IsLandscapeOriented, Source={x:Reference page}, 
+             
+             FlyoutLayoutBehavior="{Binding IsLandscapeOriented, Source={x:Reference page}, 
                                     Converter={StaticResource boolToDrawerBehaviorConverter}}"
-                    DrawerWidth="180"
-                    DrawerShadowHeight="10"
-                    DrawerShadowRadius="40"
-                    DrawerShadowColor="#808080"
-                    ScrimColor="#80000000">
-        <dxn:DrawerView.DrawerContent>
-            <Grid HeightRequest="800">
-                <ListView x:Name="carBrandList" 
-                            ItemsSource="{Binding CarModelsByBrand}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Padding="5" Text="{Binding BrandName}" />
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </dxn:DrawerView.DrawerContent>
-        <dxn:DrawerView.MainContent>
-            <Grid HeightRequest="800">
-                <ListView BindingContext="{x:Reference carBrandList}"
-                          ItemsSource="{Binding SelectedItem.CarModels}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Padding="5" Text="{Binding FullName}" />
-                            </ViewCell>
+             x:Name="page">
+    <FlyoutPage.BindingContext>
+        <local:MainViewModel/>
+    </FlyoutPage.BindingContext>
+    <FlyoutPage.Flyout>
+        <ContentPage Title="About" IconImageSource="hamburger" WidthRequest="50">
+            <CollectionView x:Name="carBrandList" 
+                            ItemsSource="{Binding CarModelsByBrand}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Padding="5" Text="{Binding BrandName}" />
                     </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-        </dxn:DrawerView.MainContent>
-    </dxn:DrawerView>
-</ContentPage>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage WidthRequest="50">
+            <x:Arguments>
+                <ContentPage>
+                    <CollectionView BindingContext="{x:Reference carBrandList}"
+                                ItemsSource="{Binding SelectedItem.CarModels}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Padding="5" Text="{Binding FullName}" />
+                             </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
