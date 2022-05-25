@@ -5,6 +5,6 @@
              x:Class="DrawerViewExample.App"
              windows:Application.ImageDirectory="Assets">
     <Application.Resources>
-
+        <local:BoolToDrawerBehaviorConverter x:Key="boolToDrawerBehaviorConverter"/>
     </Application.Resources>
 </Application>

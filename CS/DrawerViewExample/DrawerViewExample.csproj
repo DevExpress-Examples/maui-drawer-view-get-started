@@ -32,10 +32,6 @@
 		<MauiFont Include="Resources\Fonts\*" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="DevExpress.Maui.Navigation" Version="22.1.1-pre-*" />
-	</ItemGroup>
-
 	<PropertyGroup>
 		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
 	</PropertyGroup>
