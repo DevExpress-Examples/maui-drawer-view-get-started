@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Android -->
+    <TargetFrameworks>net8.0-ios;net8.0-android</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <RootNamespace>DrawerViewExample</RootNamespace>
+    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <!-- Display name -->
+    <ApplicationTitle>DrawerViewExample</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.DrawerViewExample</ApplicationId>
+    <!-- Versions -->
+    <ApplicationVersion>1</ApplicationVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+  </ItemGroup>
+  <PropertyGroup>
+    <UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
+  </PropertyGroup>
+</Project>
