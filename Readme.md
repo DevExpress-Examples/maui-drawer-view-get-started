@@ -20,12 +20,12 @@ This example shows how to replace the `DrawerView` with the `FlyoutPage` to impl
 ### Files to Look At
 
 <!-- default file list -->
-* [MauiProgram.cs](./CS/DrawerViewExample/MauiProgram.cs)
-* [MainPage.xaml](./CS/DrawerViewExample/MainPage.xaml)
-* [MainPage.xaml.cs](./CS/DrawerViewExample/MainPage.xaml.cs)
-* [CarModel.cs](./CS/DrawerViewExample/CarModel.cs)
-* [CarBrandViewModel.cs](./CS/DrawerViewExample/CarBrandViewModel.cs)
-* [MainViewModel.cs](./CS/DrawerViewExample/MainViewModel.cs)
+* [MauiProgram.cs](./CS/MauiProgram.cs)
+* [MainPage.xaml](./CS/MainPage.xaml)
+* [MainPage.xaml.cs](./CS/MainPage.xaml.cs)
+* [CarModel.cs](./CS/CarModel.cs)
+* [CarBrandViewModel.cs](./CS/CarBrandViewModel.cs)
+* [MainViewModel.cs](./CS/MainViewModel.cs)
 <!-- default file list end -->
 
 ## Documentation
